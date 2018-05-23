@@ -1,0 +1,237 @@
+<!-- header mit titel und navi
+teaser mit bild, titel & text
+news section - 3 news   überschrift, text, link, bild, bildunterschrift
+kontakformular - header, text, name email, text, absenden button
+footer mit copyright notes 
+placeholder für formfelder
+autosuggest on form inputs
+select mit options 3 optionen
+checkbox für newsletter
+anrede radios
+zeitangaben für newsartikel
+search form -> on click: dropdown under input with fictional categories
+about section -> can later be modal
+favicon in allen möglichen formaten
+5min für formate + html
+-
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header role="header">
+        <h1>
+            Martin braucht ne 'Hello World'.
+        </h1>
+        <nav role="navigation">
+            <ul>
+                <li>
+                    <a href="#teaser">Teaser</a>
+                </li>
+                <li>
+                    <a href="#news-section">News</a>
+                </li>
+                <li>
+                    <a href="#kontakt">Kontaktformular</a>
+                </li>
+                <li>
+                    <a href="#legal">Legal Disclaimer</a>
+                </li>
+                <li>
+                    <a href="#about">About me</a>
+                </li>
+            </ul>
+        </nav>
+        <form role="search">
+            <input id="search" type="search" name="q" placeholder="looky, looky - findy, findy!" list="eastereggs" aria-label="Search through site content" size="50"/>
+            <datalist id="eastereggs">
+                <option value="duck">
+                <option value="1€ in die Kasse">
+                <option value="Aberdeen bei Sonne">
+                <option value="Pato">
+                <option value="SPAM">
+            </datalist>
+            <input type="submit" value="Search"/>
+        </form>
+    </header>
+    <main>
+        <dialog id="about" open>
+            <form action="#" method="dialog">
+                <h2>About me</h2>
+                <pre cite="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">
+                        "Do you know why the German Wehrmacht girls are in
+                        the Netherlands? As mattresses for the soldiers."
+    
+                        "A man arrives at home one evening and notices another
+                        man had been in bed with his wife. After searching the
+                        whole house he finds a completely naked man in the bedroom
+                        closet. When he asked what he was doing in there, the man
+                        replied: you can believe me or not but I'm waiting for the tram."
+                        
+                        "A man had a very ugly wife and he didn't want to have
+                        relations with her. One evening he arrived home and saw 
+                        his friend in bed with his wife, and he said: he does and I must!"
+                        
+                        "A man and a woman had relations together, and after a
+                        few months the woman got fat. The man brought in a doctor
+                        who said: It's all air madam, all air! The man then
+                        said: 'But I don't pump air?"
+    
+                        -- Anne Frank
+    
+                        Read more at <a href="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">www.theguardian.com</a>
+                </pre>
+                <div>
+                    <input type="submit" accesskey="v" name="interesting" value="(v)ery interesting!"/>
+                    <input type="submit" accesskey="w" name="boring" value="(w)ell..."/>
+                </div>
+            </form>
+        </dialog>
+        <section id="teaser">
+            <h2>Bilder sind immer toll</h2>
+            <figure>
+                <img src="http://via.placeholder.com/650x350" alt="hier sollte nen bild hin"/>
+                <figcaption>
+                    Natürlich brauch jedes Bild auch nen bisle flavour text und so. Aber alles BE. Muss ja sein.
+                </figcaption>
+            </figure>
+        </section>
+        <hr />
+        <section id="news-section">
+            <h2>News</h2>
+            <article>
+                <h3>
+                    News Nummer 1
+                </h3>
+                <p>Published on <time datetime="2018-05-18T19:00">May 18 2018</time></p>
+                <p>
+                    Irgendwas is scheinbar grad passiert. Irgendwas is scheinbar grad passiert. Irgendwas is scheinbar grad passiert. Irgendwas is scheinbar grad passiert. Irgendwas is scheinbar grad passiert.
+                    <br />
+                    <i>Mehr dazu gibts <a href="https://www.google.de" target="_blank">hier</a>.</i>
+                </p>
+                <figure>
+                    <img src="http://via.placeholder.com/350x150" alt="" />
+                    <figcaption>
+                        Aberdeen bei Sonne.
+                    </figcaption>
+                </figure>
+            </article>
+            <article>
+                <h3>
+                    News Nummer 2
+                </h3>
+                <p>Published on <time datetime="1913-12-20T19:00">December 20 1913</time></p>
+                <p>
+                    Das war weniger wichtig, is scheinbar grad passiert. Das war weniger wichtig,
+                    <blockquote cite="https://github.com/MartinHelmut">Ich fand das eigentlich (1€ in die Kasse) richtig blöd! --Martin</blockquote> 
+                    is scheinbar grad passiert. Das war weniger wichtig, is scheinbar grad passiert. Das war weniger wichtig, is scheinbar grad passiert. Das war weniger wichtig, is scheinbar grad passiert.
+                    <br />
+                    <i>Mehr dazu gibts <a href="https://www.google.de" target="_blank">hier</a>.</i>
+                </p>
+                <figure>
+                    <img src="http://via.placeholder.com/350x150" alt="" />
+                    <figcaption>
+                        Hamburg an einem regnerischen Tag.
+                    </figcaption>
+                </figure>
+            </article>
+            <article>
+                <h3>
+                    News Nummer 3
+                </h3>
+                <p>Published on <time datetime="2010-02-18T19:00">February 18 2010</time></p>
+                <p>
+                    Irgendwas anderes is scheinbar gestern passiert. Irgendwas is scheinbar gestern passiert. Irgendwas is scheinbar gestern passiert. Irgendwas is scheinbar gestern passiert. Irgendwas is scheinbar gestern passiert.
+                    <br />
+                    <i>Mehr dazu gibts <a href="https://www.google.de" target="_blank">hier</a>.</i>
+                </p>
+                <figure>
+                    <img src="http://via.placeholder.com/350x150" alt="" />
+                    <figcaption>
+                        Wunderbare Aussicht von der französischen Mittelmehrküste (bei Nebel).
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+        <hr />
+        <section id="kontakt">
+            <form action="#" method="post" autocomplete aria-autocomplete="on">
+                <legend><strong>Kontaktformular</strong></legend>
+                <p>Fields marked with <sup>*</sup> are required fields.</p>
+                <fieldset>
+                    <legend>What can you offer the mighty Pato?</legend>
+                    <select name="reason">
+                        <optgroup label="Please select your strongest quality.">
+                            <option value="saving the bees">
+                                I'm mentally helping to save the bees!
+                            </option>
+                            <option value="mum">
+                                My mum said I'm special.
+                            </option>
+                            <option value="duck dive roll">
+                                I'm a 'duck, dive and roll' pro. Just sayin'.
+                            </option>
+                        </optgroup>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend><sup>*</sup> Which of these animals do you identify as most?</legend>
+                    <div>
+                        <label for="goose">Goose</label>
+                        <input id="goose" type="radio" name="animal" value="Goose" required aria-required="true"/>
+                        <label for="Cat">Cat</label>
+                        <input id="Cat" type="radio" name="animal" value="Cat"/>
+                        <label for="Duck">Duck</label>
+                        <input id="Duck" type="radio" name="animal" value="Duck"/>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Personal Data</legend>   
+                    <fieldset>
+                        <label for="name"><sup>*</sup> Full Name:</label>
+                        <input id="name" type="text" placeholder="Max Mustermann" required aria-required="true" name="name" autocomplete="name" aria-autocomplete="both"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email"><sup>*</sup> E-Mail:</label>
+                        <input id="email" type="text" placeholder="example@mail.foo" required aria-required="true" name="email" autocomplete="email" aria-autocomplete="both"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="comments" spellcheck="true">Comments:</label>
+                        <textarea id="comments" type="text" aria-required="false" name="comments"></textarea>
+                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <input id="newsletter" type="checkbox" name="newsletter"/>
+                    <label for="newsletter">Check this box if you would like our Newsletter in your SPAM folder.</label>
+                </fieldset>
+                <input type="submit" id="submit" name="Submit" accesskey="enter"/>
+            </form>
+        </section>
+    </main>
+    <hr />
+    <footer id="legal" role="contentinfo">
+        <h3>Legal Disclaimer</h3>
+        <address>
+                <p name="author">Written by <a href="mailto:nils@ukuechler.de">Nils K.</a></p>
+                <p name="postcode">12345</p> 
+                <p name="town">Schissel</p>
+                <p>Wissel</p>
+        </address>
+        <small>
+            Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum.
+        </small>
+    </footer>
+</body>
+</html>

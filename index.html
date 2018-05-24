@@ -31,46 +31,169 @@ favicon in allen möglichen formaten
     <meta name="theme-color" content="#ffffff" />
 </head>
 <body>
-    <header role="header">
-        <h1>
+    <header role="header" class="header">
+        <h1 class="heading--1">
             Martin braucht ne 'Hello World'.
         </h1>
-        <nav role="navigation">
-            <ul>
-                <li>
-                    <a href="#teaser">Teaser</a>
+        <nav role="navigation" class="navigation">
+            <ul class="nav-list">
+                <li class="nav-list__item">
+                    <a class="link--navigation" href="#news-section">News</a>
                 </li>
-                <li>
-                    <a href="#news-section">News</a>
+                <li class="nav-list__item">
+                    <a class="link--navigation" href="#contact">Contact Form</a>
                 </li>
-                <li>
-                    <a href="#kontakt">Contact Form</a>
+                <li class="nav-list__item">
+                    <a class="link--navigation" href="#legal">Legal Disclaimer</a>
                 </li>
-                <li>
-                    <a href="#legal">Legal Disclaimer</a>
-                </li>
-                <li>
-                    <a href="#about">About me</a>
+                <li class="nav-list__item">
+                    <a class="link--navigation" href="#about">About me</a>
                 </li>
             </ul>
         </nav>
-        <form role="search">
-            <input id="search" type="search" name="q" placeholder="looky, looky - findy, findy!" list="eastereggs" aria-label="Search through site content" size="50" />
-            <datalist id="eastereggs">
-                <option value="duck" />
-                <option value="1&#8364; in die Kasse" />
-                <option value="Aberdeen bei Sonne" />
-                <option value="Pato" />
-                <option value="SPAM" />
+        <form role="search" class="search-form">
+            <input class="search-form__input" id="search" type="search" name="q" placeholder="looky, looky - findy, findy!" list="eastereggs" aria-label="Search through site content" size="50" />
+            <datalist class="search-form__options-wrapper" id="eastereggs">
+                <option class="search-form__option" value="duck" />
+                <option class="search-form__option" value="1&#8364; in die Kasse" />
+                <option class="search-form__option" value="Aberdeen bei Sonne" />
+                <option class="search-form__option" value="Pato" />
+                <option class="search-form__option" value="SPAM" />
             </datalist>
-            <input type="submit" value="Search" />
+            <input class="button--submit" type="submit" value="Search" />
         </form>
     </header>
-    <main>
-        <dialog id="about" open role="alertdialog" aria-modal="true">
-            <form action="#" method="dialog">
-                <h2>About me</h2>
-                <pre cite="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">
+    <main class="main-content">
+        <section id="teaser" class="teaser">
+            <h2 class="heading--2">Images are always great!</h2>
+            <figure class="teaser__image-wrapper">
+                <img class="teaser__image" src="http://via.placeholder.com/650x350" alt="Grey image signifying the futility of life." />
+                <figcaption class="teaser__image-caption">
+                    Every image needs flavour text.
+                </figcaption>
+            </figure>
+        </section>
+        <hr class="content-break" />
+        <section class="news" id="news">
+            <h2 class="heading--2">News</h2>
+            <article class="news__article">
+                <h3 class="heading--3">
+                    News Number 1
+                </h3>
+                <p class="copy--date">Published on <time class="date" datetime="2018-05-18T19:00">May 18 2018</time></p>
+                <p class="copy--news">
+                    Something seems to have happened just now. Something seems to have happened just now.
+                    <br class="line-break" />
+                    <i class="copy--information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
+                </p>
+                <figure class="news__image-wrapper">
+                    <img class="image--news" src="http://via.placeholder.com/350x150" alt="" />
+                    <figcaption class="copy--image-caption">
+                        Aberdeen on a sunny day
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="news__article">
+                <h3 class="heading--3">
+                    News Number 2
+                </h3>
+                <p class="copy--date">Published on <time class="date" datetime="1913-12-20T19:00">December 20 1913</time></p>
+                <p class="copy--news">
+                    This was slightly less important and happened just now.
+                    <blockquote class="blockquote" cite="https://github.com/MartinHelmut">Ich fand das eigentlich (1&#8364; in die Kasse) richtig bl&ouml;d! --Martin</blockquote> 
+                    This was slightly less important and happened just now. This was slightly less important and happened just now. This was slightly less important and happened just now.
+                    <br class="line-break" />
+                    <i class="copy--information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
+                </p>
+                <figure class="news__image-wrapper">
+                    <img class="image--news" src="http://via.placeholder.com/350x150" alt="" />
+                    <figcaption class="copy--image-caption">
+                        Hamburg on a rainy day.
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="news__article">
+                <h3 class="heading--3">
+                    News Number 3
+                </h3>
+                <p class="copy--date">Published on <time class="date" datetime="2010-02-18T19:00">February 18 2010</time></p>
+                <p class="copy--news">
+                    Something else seems to have happened yesterday.
+                    <br class="line-break" />
+                    <i class="copy--information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
+                </p>
+                <figure class="news__image-wrapper">
+                    <img class="image--news" src="http://via.placeholder.com/350x150" alt="" />
+                    <figcaption class="copy--image-caption">
+                        Beautiful view from the french atlantic coast (on a foggy day).
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+        <hr class="content-break" />
+        <section class="contact" id="contact">
+            <form class="contact-form" action="#" method="post" autocomplete aria-autocomplete="on">
+                <legend class="contact-form__legend">
+                    <strong class="copy--emphasize">
+                        Contact Form
+                    </strong>
+                </legend>
+                <p class="copy">
+                    Fields marked with <sup>*</sup> are required fields.
+                </p>
+                <fieldset class="form-section">
+                    <legend class="form-section__legend">What can you offer the mighty Pato?</legend>
+                    <select class="form-section__select" name="reason">
+                        <optgroup class="form-section__select__options" label="Please select your strongest quality.">
+                            <option class="form-section__select__option" value="saving the bees">
+                                I'm mentally helping to save the bees!
+                            </option>
+                            <option class="form-section__select__option" value="mum">
+                                My mum said I'm special.
+                            </option>
+                            <option class="form-section__select__option" value="duck dive roll">
+                                I'm a 'duck, dive and roll' pro. Just sayin'.
+                            </option>
+                        </optgroup>
+                    </select>
+                </fieldset>
+                <fieldset class="form-section">
+                    <legend class="form-section__legend"><sup>*</sup> Which of these animals do you identify as most?</legend>
+                    <div class="radios-wrapper">
+                        <label class="copy input__label" for="goose">Goose</label>
+                        <input class="radio" id="goose" type="radio" name="animal" value="Goose" required aria-required="true" />
+                        <label class="copy input__label" for="Cat">Cat</label>
+                        <input class="radio" id="Cat" type="radio" name="animal" value="Cat" />
+                        <label class="copy input__label" for="Duck">Duck</label>
+                        <input class="radio" id="Duck" type="radio" name="animal" value="Duck" />
+                    </div>
+                </fieldset>
+                <fieldset class="form-section">
+                    <legend class="form-section__legend">Personal Data</legend>   
+                    <fieldset class="form-section--inner">
+                        <label class="input__label" for="name"><sup>*</sup> Full Name:</label>
+                        <input class="text-input" id="name" type="text" placeholder="Max Mustermann" required aria-required="true" name="name" autocomplete="name" aria-autocomplete="both" />
+                    </fieldset>
+                    <fieldset class="form-section--inner">
+                        <label class="input__label" for="email"><sup>*</sup> E-Mail:</label>
+                        <input class="text-input" id="email" type="text" placeholder="example@mail.foo" required aria-required="true" name="email" autocomplete="email" aria-autocomplete="both" />
+                    </fieldset>
+                    <fieldset class="form-section--inner">
+                        <label class="input__label" for="comments" spellcheck="true">Comments:</label>
+                        <textarea class="text-input--area" id="comments" type="text" aria-required="false" name="comments"></textarea>
+                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <input class="checkbox" id="newsletter" type="checkbox" name="newsletter" />
+                    <label class="input__label--newsletter" for="newsletter">Check this box if you would like our Newsletter in your SPAM folder.</label>
+                </fieldset>
+                <input class="button--submit" type="submit" id="submit" name="Submit" accesskey="enter" />
+            </form>
+        </section>
+        <section class="about" id="about">
+            <form class="about-form" action="#" method="post">
+                <h2 class="heading--2">About me</h2>
+                <pre class="copy" cite="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">
                         "Do you know why the German Wehrmacht girls are in
                         the Netherlands? As mattresses for the soldiers."
     
@@ -91,145 +214,25 @@ favicon in allen möglichen formaten
     
                         -- Anne Frank
     
-                        Read more at <a href="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">www.theguardian.com</a>
+                        Read more at <a class="link" href="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">www.theguardian.com</a>
                 </pre>
-                <div>
-                    <input type="submit" accesskey="v" name="interesting" value="(v)ery interesting!" />
-                    <input type="submit" accesskey="w" name="boring" value="(w)ell..." />
+                <div class="button-wrapper">
+                    <input class="button--submit" type="submit" accesskey="v" name="interesting" value="(v)ery interesting!" />
+                    <input class="button--submit" type="submit" accesskey="w" name="boring" value="(w)ell..." />
                 </div>
-            </form>
-        </dialog>
-        <section id="teaser">
-            <h2>Images are always great!</h2>
-            <figure>
-                <img src="http://via.placeholder.com/650x350" alt="Grey image signifying the futility of life." />
-                <figcaption>
-                    Every image needs flavour text.
-                </figcaption>
-            </figure>
-        </section>
-        <hr />
-        <section id="news-section">
-            <h2>News</h2>
-            <article>
-                <h3>
-                    News Number 1
-                </h3>
-                <p>Published on <time datetime="2018-05-18T19:00">May 18 2018</time></p>
-                <p>
-                    Something seems to have happened just now. Something seems to have happened just now.
-                    <br />
-                    <i>More information can be found via the Google search engine located <a href="https://www.google.de" target="_blank">here</a>.</i>
-                </p>
-                <figure>
-                    <img src="http://via.placeholder.com/350x150" alt="" />
-                    <figcaption>
-                        Aberdeen on a sunny day
-                    </figcaption>
-                </figure>
-            </article>
-            <article>
-                <h3>
-                    News Number 2
-                </h3>
-                <p>Published on <time datetime="1913-12-20T19:00">December 20 1913</time></p>
-                <p>
-                    This was slightly less important and happened just now.
-                    <blockquote cite="https://github.com/MartinHelmut">Ich fand das eigentlich (1&#8364; in die Kasse) richtig bl&ouml;d! --Martin</blockquote> 
-                    This was slightly less important and happened just now. This was slightly less important and happened just now. This was slightly less important and happened just now.
-                    <br />
-                    <i>More information can be found via the Google search engine located <a href="https://www.google.de" target="_blank">here</a>.</i>
-                </p>
-                <figure>
-                    <img src="http://via.placeholder.com/350x150" alt="" />
-                    <figcaption>
-                        Hamburg on a rainy day.
-                    </figcaption>
-                </figure>
-            </article>
-            <article>
-                <h3>
-                    News Number 3
-                </h3>
-                <p>Published on <time datetime="2010-02-18T19:00">February 18 2010</time></p>
-                <p>
-                    Something else seems to have happened yesterday.
-                    <br />
-                    <i>More information can be found via the Google search engine located <a href="https://www.google.de" target="_blank">here</a>.</i>
-                </p>
-                <figure>
-                    <img src="http://via.placeholder.com/350x150" alt="" />
-                    <figcaption>
-                        Beautiful view from the french atlantic coast (on a foggy day).
-                    </figcaption>
-                </figure>
-            </article>
-        </section>
-        <hr />
-        <section id="kontakt">
-            <form action="#" method="post" autocomplete aria-autocomplete="on">
-                <legend><strong>Contact Form</strong></legend>
-                <p>Fields marked with <sup>*</sup> are required fields.</p>
-                <fieldset>
-                    <legend>What can you offer the mighty Pato?</legend>
-                    <select name="reason">
-                        <optgroup label="Please select your strongest quality.">
-                            <option value="saving the bees">
-                                I'm mentally helping to save the bees!
-                            </option>
-                            <option value="mum">
-                                My mum said I'm special.
-                            </option>
-                            <option value="duck dive roll">
-                                I'm a 'duck, dive and roll' pro. Just sayin'.
-                            </option>
-                        </optgroup>
-                    </select>
-                </fieldset>
-                <fieldset>
-                    <legend><sup>*</sup> Which of these animals do you identify as most?</legend>
-                    <div>
-                        <label for="goose">Goose</label>
-                        <input id="goose" type="radio" name="animal" value="Goose" required aria-required="true" />
-                        <label for="Cat">Cat</label>
-                        <input id="Cat" type="radio" name="animal" value="Cat" />
-                        <label for="Duck">Duck</label>
-                        <input id="Duck" type="radio" name="animal" value="Duck" />
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Personal Data</legend>   
-                    <fieldset>
-                        <label for="name"><sup>*</sup> Full Name:</label>
-                        <input id="name" type="text" placeholder="Max Mustermann" required aria-required="true" name="name" autocomplete="name" aria-autocomplete="both" />
-                    </fieldset>
-                    <fieldset>
-                        <label for="email"><sup>*</sup> E-Mail:</label>
-                        <input id="email" type="text" placeholder="example@mail.foo" required aria-required="true" name="email" autocomplete="email" aria-autocomplete="both" />
-                    </fieldset>
-                    <fieldset>
-                        <label for="comments" spellcheck="true">Comments:</label>
-                        <textarea id="comments" type="text" aria-required="false" name="comments"></textarea>
-                    </fieldset>
-                </fieldset>
-                <fieldset>
-                    <input id="newsletter" type="checkbox" name="newsletter" />
-                    <label for="newsletter">Check this box if you would like our Newsletter in your SPAM folder.</label>
-                </fieldset>
-                <input type="submit" id="submit" name="Submit" accesskey="enter" />
             </form>
         </section>
     </main>
-    <hr />
-    <footer id="legal" role="contentinfo">
-        <h3>Legal Disclaimer</h3>
-        <address>
-                Written by <a href="mailto:nils@ukuechler.de">Nils K.</a><br />
-                Located in:<br />
-                12345, Schissel<br />
+    <hr class="content-break" />
+    <footer class="footer" id="legal" role="contentinfo">
+        <h3 class="heading--3">Legal Disclaimer</h3>
+        <address class="address">
+                Written by <a class="link" href="mailto:nils@ukuechler.de">Nils K.</a><br class="line-break" />
+                Located in:<br class="line-break" />
+                12345, Schissel<br class="line-break" />
                 Wissel
         </address>
-        <small>
+        <small class="small">
             Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum.
         </small>
     </footer>

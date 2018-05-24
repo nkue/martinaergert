@@ -4,9 +4,9 @@
 
 .navigation {}
 
-.nav-list {}
+.navigation-list {}
 
-    .nav-list__item {}
+    .navigation-list__item {}
 
 /* ------------------- */
 
@@ -96,8 +96,6 @@
 
 .search-form {}
 
-    .search-form__input {}
-
     .search-form__options-wrapper {}
 
     .search-form__option {}
@@ -138,6 +136,8 @@
 
     .text-input--area {}
 
+    .text-input--search {}
+
 .checkbox
 
 /* ------------------- */
@@ -145,3 +145,13 @@
 /* Images */
 
 .image--news {}
+
+
+
+/* 
+separation ul/ol?
+should there be an .image class? 
+base input class that then spreads out?
+cluster forms under .form?
+uniform wrappers?
+*/

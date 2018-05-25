@@ -14,25 +14,21 @@
 
     .list--navigation {}
 
-        .list--navigation__item {}
+    .list__item--navigation {}
 
 /* ------------------- */
 
 .teaser {}
 
-    .teaser__image {}
-
-    .teaser__image-wrapper {}
-
-    .teaser__image-caption {}
-
 /* ------------------- */
 
 .news {}
 
-    .news__article {}
+.article {}
 
-    .news__image-wrapper {}
+    .article--news {}
+
+.news__image-wrapper {}
 
 /* ------------------- */
 
@@ -54,13 +50,13 @@
 
 /* Headings */
 
-.heading {}
+.heading-teaser {}
 
-    .heading--1 {}
+.heading-1 {}
 
-    .heading--2 {}
+.heading-2 {}
 
-    .heading--3 {}
+.heading-3 {}
 
 /* ------------------- */
 
@@ -72,19 +68,27 @@
 
     .copy--news {}
 
-    .copy--information {}
+    .information {}
 
     .copy--image-caption {}
 
-    .copy--emphasize {}
+    .copy--teaser-image-caption {}
 
-    .copy--blockquote {}
+    .emphasize {}
+
+    .blockquote {}
+
+    .superscript {}
 
     .copy--legend {}
 
     .copy--small {}
 
     .copy--address {}
+
+    .copy--label {}
+
+    .copy--newsletter-label {}
 
 /* ------------------- */
 
@@ -98,31 +102,31 @@
 
 /* Forms */
 
-.search-form {}
+.form {}
 
-    .search-form__options-wrapper {}
+    .form--search {}
 
-    .search-form__option {}
+    .form-options--search {}
+
+    .form-option--search {}
+
+    .form-options--select {}
+
+    .form-option--select {}
+
+    .form--contact {}
+
+    .form--about
 
 .contact-form {}
 
 .about-form
 
-.form-section {}
+.fieldset {}
 
-    .form-section--inner {}
+    .fieldset--inner {}
 
-    .form-section__legend {}
-
-    .form-section__select {}
-
-        .form-section__select__options {}
-
-        .form-section__select__option {}
-
-.input__label {}
-
-    .input__label--newsletter {}
+.select {}
 
 /* ------------------- */
 
@@ -152,8 +156,27 @@
 
     .image--news {}
 
+    .image--teaser {}
+
+    .image__visual {}
+
+        .image__visual--teaser {}
+
+        .image__visual--news {}
+
 /* 
-base input class that then spreads out?
-cluster forms under .form?
 section class
+headings
 */
+
+
+
+.list {}
+.list--navigation {}
+.list__item {}
+.list--navigation .list__item {}
+.list__item--primary {}
+
+
+.list .link {}
+.list__link {}

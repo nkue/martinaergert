@@ -32,98 +32,98 @@ favicon in allen möglichen formaten
 </head>
 <body>
     <header role="header" class="first-level-section first-level-section--header">
-        <h1 class="heading heading--1">
+        <h1 class="heading-1">
             Martin braucht ne 'Hello World'.
         </h1>
         <nav role="navigation" class="navigation">
-            <ul class="list list--navigation">
-                <li class="list list--navigation__item">
-                    <a class="link link--navigation" href="#news-section">News</a>
+            <ul class="list list--navigation navigation__list">
+                <li class="list__item">
+                    <a class="list__link" href="#news-section">News</a>
                 </li>
-                <li class="list list--navigation__item">
-                    <a class="link link--navigation" href="#contact">Contact Form</a>
+                <li class="list__item">
+                    <a class="list__link" href="#contact">Contact Form</a>
                 </li>
-                <li class="list list--navigation__item">
-                    <a class="link link--navigation" href="#legal">Legal Disclaimer</a>
+                <li class="list__item">
+                    <a class="list__link" href="#legal">Legal Disclaimer</a>
                 </li>
-                <li class="list list--navigation__item">
-                    <a class="link link--navigation" href="#about">About me</a>
+                <li class="list__item">
+                    <a class="list__link" href="#about">About me</a>
                 </li>
             </ul>
         </nav>
-        <form role="search" class="search-form">
+        <form role="search" class="form form--search">
             <input class="text-input text-input--search" id="search" type="search" name="q" placeholder="looky, looky - findy, findy!" list="eastereggs" aria-label="Search through site content" size="50" />
-            <datalist class="search-form__options-wrapper" id="eastereggs">
-                <option class="search-form__option" value="duck" />
-                <option class="search-form__option" value="1&#8364; in die Kasse" />
-                <option class="search-form__option" value="Aberdeen bei Sonne" />
-                <option class="search-form__option" value="Pato" />
-                <option class="search-form__option" value="SPAM" />
+            <datalist class="form-options--search" id="eastereggs">
+                <option class="form-option--search" value="duck" />
+                <option class="form-option--search" value="1&#8364; in die Kasse" />
+                <option class="form-option--search" value="Aberdeen bei Sonne" />
+                <option class="form-option--search" value="Pato" />
+                <option class="form-option--search" value="SPAM" />
             </datalist>
             <input class="button button--submit" type="submit" value="Search" />
         </form>
     </header>
     <main class="first-level-section first-level-section--main-content">
-        <section id="teaser" class="teaser">
-            <h2 class="heading heading--2">Images are always great!</h2>
-            <figure class="teaser__image-wrapper">
-                <img class="teaser__image" src="http://via.placeholder.com/650x350" alt="Grey image signifying the futility of life." />
-                <figcaption class="teaser__image-caption">
+        <section class="teaser">
+            <h2 class="heading-teaser">Images are always great!</h2>
+            <figure class="image image--teaser">
+                <img class="image__visual image__visual--teaser" src="http://via.placeholder.com/650x350" alt="Grey image signifying the futility of life." />
+                <figcaption class="copy copy--teaser-image-caption">
                     Every image needs flavour text.
                 </figcaption>
             </figure>
         </section>
         <hr class="content-break" />
         <section class="news" id="news">
-            <h2 class="heading heading--2">News</h2>
-            <article class="news__article">
-                <h3 class="heading heading--3">
+            <h2 class="heading-2">News</h2>
+            <article class="article--news">
+                <h3 class="heading-3">
                     News Number 1
                 </h3>
                 <p class="copy copy--date">Published on <time class="date" datetime="2018-05-18T19:00">May 18 2018</time></p>
                 <p class="copy copy--news">
                     Something seems to have happened just now. Something seems to have happened just now.
                     <br class="line-break" />
-                    <i class="copy copy--information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
+                    <i class="information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
                 </p>
-                <figure class="news__image-wrapper">
-                    <img class="image image--news" src="http://via.placeholder.com/350x150" alt="" />
+                <figure class="image image--news">
+                    <img class="image__visual image__visual--news" src="http://via.placeholder.com/350x150" alt="" />
                     <figcaption class="copy copy--image-caption">
                         Aberdeen on a sunny day
                     </figcaption>
                 </figure>
             </article>
-            <article class="news__article">
-                <h3 class="heading heading--3">
+            <article class="article--news">
+                <h3 class="heading-3">
                     News Number 2
                 </h3>
                 <p class="copy copy--date">Published on <time class="date" datetime="1913-12-20T19:00">December 20 1913</time></p>
                 <p class="copy copy--news">
                     This was slightly less important and happened just now.
-                    <blockquote class="copy copy--blockquote" cite="https://github.com/MartinHelmut">Ich fand das eigentlich (1&#8364; in die Kasse) richtig bl&ouml;d! --Martin</blockquote> 
+                    <blockquote class="blockquote" cite="https://github.com/MartinHelmut">Ich fand das eigentlich (1&#8364; in die Kasse) richtig bl&ouml;d! --Martin</blockquote> 
                     This was slightly less important and happened just now. This was slightly less important and happened just now. This was slightly less important and happened just now.
                     <br class="line-break" />
-                    <i class="copy copy--information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
+                    <i class="information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
                 </p>
-                <figure class="news__image-wrapper">
-                    <img class="image image--news" src="http://via.placeholder.com/350x150" alt="" />
+                <figure class="image image--news">
+                    <img class="image__visual image__visual--news" src="http://via.placeholder.com/350x150" alt="" />
                     <figcaption class="copy copy--image-caption">
                         Hamburg on a rainy day.
                     </figcaption>
                 </figure>
             </article>
-            <article class="news__article">
-                <h3 class="heading heading--3">
+            <article class="article--news">
+                <h3 class="heading-3">
                     News Number 3
                 </h3>
                 <p class="copy copy--date">Published on <time class="date" datetime="2010-02-18T19:00">February 18 2010</time></p>
                 <p class="copy copy--news">
                     Something else seems to have happened yesterday.
                     <br class="line-break" />
-                    <i class="copy copy--information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
+                    <i class="information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
                 </p>
-                <figure class="news__image-wrapper">
-                    <img class="image image--news" src="http://via.placeholder.com/350x150" alt="" />
+                <figure class="image image--news">
+                    <img class="image__visual image__visual--news" src="http://via.placeholder.com/350x150" alt="" />
                     <figcaption class="copy copy--image-caption">
                         Beautiful view from the french atlantic coast (on a foggy day).
                     </figcaption>
@@ -132,102 +132,102 @@ favicon in allen möglichen formaten
         </section>
         <hr class="content-break" />
         <section class="contact" id="contact">
-            <form class="contact-form" action="#" method="post" autocomplete aria-autocomplete="on">
+            <form class="form form--contact" action="#" method="post" autocomplete aria-autocomplete="on">
                 <legend class="copy copy--legend">
-                    <strong class="copy copy--emphasize">
+                    <strong class="emphasize">
                         Contact Form
                     </strong>
                 </legend>
                 <p class="copy">
-                    Fields marked with <sup class="copy copy--superscript">*</sup> are required fields.
+                    Fields marked with <sup class="superscript">*</sup> are required fields.
                 </p>
-                <fieldset class="form-section">
+                <fieldset class="fieldset">
                     <legend class="copy copy--legend">
                         What can you offer the mighty Pato?
                     </legend>
-                    <select class="form-section__select" name="reason">
-                        <optgroup class="form-section__select__options" label="Please select your strongest quality.">
-                            <option class="form-section__select__option" value="saving the bees">
+                    <select class="select" name="reason">
+                        <optgroup class="form-options--select" label="Please select your strongest quality.">
+                            <option class="form-option--select" value="saving the bees">
                                 I'm mentally helping to save the bees!
                             </option>
-                            <option class="form-section__select__option" value="mum">
+                            <option class="form-option--select" value="mum">
                                 My mum said I'm special.
                             </option>
-                            <option class="form-section__select__option" value="duck dive roll">
+                            <option class="form-option--select" value="duck dive roll">
                                 I'm a 'duck, dive and roll' pro. Just sayin'.
                             </option>
                         </optgroup>
                     </select>
                 </fieldset>
-                <fieldset class="form-section">
+                <fieldset class="fieldset">
                     <legend class="copy copy--legend">
-                        <sup class="copy copy--superscript">*</sup>Which of these animals do you identify as most?
+                        <sup class="superscript">*</sup>Which of these animals do you identify as most?
                     </legend>
                     <div class="radios-wrapper">
-                        <label class="copy input__label" for="goose">Goose</label>
+                        <label class="copy copy--label" for="goose">Goose</label>
                         <input class="radio" id="goose" type="radio" name="animal" value="Goose" required aria-required="true" />
-                        <label class="copy input__label" for="Cat">Cat</label>
+                        <label class="copy copy--label" for="Cat">Cat</label>
                         <input class="radio" id="Cat" type="radio" name="animal" value="Cat" />
-                        <label class="copy input__label" for="Duck">Duck</label>
+                        <label class="copy copy--label" for="Duck">Duck</label>
                         <input class="radio" id="Duck" type="radio" name="animal" value="Duck" />
                     </div>
                 </fieldset>
-                <fieldset class="form-section">
+                <fieldset class="fieldset">
                     <legend class="copy copy--legend">
                         Personal Data
                     </legend>   
-                    <fieldset class="form-section form-section--inner">
-                        <label class="input__label" for="name">
-                            <sup class="copy copy--superscript">*</sup>Full Name:
+                    <fieldset class="fieldset fieldset--inner">
+                        <label class="copy copy--label" for="name">
+                            <sup class="superscript">*</sup>Full Name:
                         </label>
                         <input class="text-input" id="name" type="text" placeholder="Max Mustermann" required aria-required="true" name="name" autocomplete="name" aria-autocomplete="both" />
                     </fieldset>
-                    <fieldset class="form-section form-section--inner">
-                        <label class="input__label" for="email">
-                            <sup class="copy copy--superscript">*</sup>E-Mail:
+                    <fieldset class="fieldset fieldset--inner">
+                        <label class="copy copy--label" for="email">
+                            <sup class="superscript">*</sup>E-Mail:
                         </label>
                         <input class="text-input" id="email" type="text" placeholder="example@mail.foo" required aria-required="true" name="email" autocomplete="email" aria-autocomplete="both" />
                     </fieldset>
-                    <fieldset class="form-section form-section--inner">
-                        <label class="input__label" for="comments" spellcheck="true">
+                    <fieldset class="fieldset fieldset--inner">
+                        <label class="copy copy--label" for="comments" spellcheck="true">
                             Comments:
                         </label>
                         <textarea class="text-input text-input--area" id="comments" type="text" aria-required="false" name="comments"></textarea>
                     </fieldset>
                 </fieldset>
-                <fieldset>
+                <fieldset class="fieldset">
                     <input class="checkbox" id="newsletter" type="checkbox" name="newsletter" />
-                    <label class="input__label input__label--newsletter" for="newsletter">Check this box if you would like our Newsletter in your SPAM folder.</label>
+                    <label class="copy copy--newsletter-label" for="newsletter">Check this box if you would like our Newsletter in your SPAM folder.</label>
                 </fieldset>
                 <input class="button button--submit" type="submit" id="submit" name="Submit" accesskey="enter" />
             </form>
         </section>
         <section class="about" id="about">
-            <form class="about-form" action="#" method="post">
-                <h2 class="heading heading--2">About me</h2>
-                <pre class="copy" cite="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">
-                        "Do you know why the German Wehrmacht girls are in
-                        the Netherlands? As mattresses for the soldiers."
-    
-                        "A man arrives at home one evening and notices another
-                        man had been in bed with his wife. After searching the
-                        whole house he finds a completely naked man in the bedroom
-                        closet. When he asked what he was doing in there, the man
-                        replied: you can believe me or not but I'm waiting for the tram."
-                        
-                        "A man had a very ugly wife and he didn't want to have
-                        relations with her. One evening he arrived home and saw 
-                        his friend in bed with his wife, and he said: he does and I must!"
-                        
-                        "A man and a woman had relations together, and after a
-                        few months the woman got fat. The man brought in a doctor
-                        who said: It's all air madam, all air! The man then
-                        said: 'But I don't pump air?"
-    
-                        -- Anne Frank
-    
-                        Read more at <a class="link" href="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">www.theguardian.com</a>
-                </pre>
+            <form class="form form--about" action="#" method="post">
+                <h2 class="heading-2">About me</h2>
+                <p class="copy" cite="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">
+                    "Do you know why the German Wehrmacht girls are in<br class="line-break" />
+                    the Netherlands? As mattresses for the soldiers."<br class="line-break" />
+                    <br class="line-break" />
+                    "A man arrives at home one evening and notices another<br class="line-break" />
+                    man had been in bed with his wife. After searching the<br class="line-break" />
+                    whole house he finds a completely naked man in the bedroom<br class="line-break" />
+                    closet. When he asked what he was doing in there, the man<br class="line-break" />
+                    replied: you can believe me or not but I'm waiting for the tram."<br class="line-break" />
+                    <br class="line-break" />
+                    "A man had a very ugly wife and he didn't want to have<br class="line-break" />
+                    relations with her. One evening he arrived home and saw <br class="line-break" />
+                    his friend in bed with his wife, and he said: he does and I must!"<br class="line-break" />
+                    <br class="line-break" />
+                    "A man and a woman had relations together, and after a<br class="line-break" />
+                    few months the woman got fat. The man brought in a doctor<br class="line-break" />
+                    who said: It's all air madam, all air! The man then<br class="line-break" />
+                    said: 'But I don't pump air?"<br class="line-break" />
+                    <br class="line-break" />
+                    -- Anne Frank
+                    <br class="line-break" />
+                    Read more at <a class="link" href="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">www.theguardian.com</a>
+                </p>
                 <div class="button-wrapper">
                     <input class="button button--submit" type="submit" accesskey="v" name="interesting" value="(v)ery interesting!" />
                     <input class="button button--submit" type="submit" accesskey="w" name="boring" value="(w)ell..." />
@@ -237,7 +237,7 @@ favicon in allen möglichen formaten
     </main>
     <hr class="content-break" />
     <footer class="first-level-section first-level-section--footer" id="legal" role="contentinfo">
-        <h3 class="heading heading--3">Legal Disclaimer</h3>
+        <h3 class="heading-3">Legal Disclaimer</h3>
         <address class="copy copy--address">
                 Written by <a class="link" href="mailto:nils@ukuechler.de">Nils K.</a><br class="line-break" />
                 Located in:<br class="line-break" />

@@ -14,6 +14,10 @@ about section -> can later be modal
 favicon in allen möglichen formaten
 5min für formate + html
 -
+
+open as workspace in dev tools
+mobile view
+define styling of smallest atoms
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +33,7 @@ favicon in allen möglichen formaten
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header role="header" class="first-level-section first-level-section--header">
@@ -36,7 +41,7 @@ favicon in allen möglichen formaten
             Martin braucht ne 'Hello World'.
         </h1>
         <nav role="navigation" class="navigation">
-            <ul class="list list--navigation navigation__list">
+            <ul class="navigation__list">
                 <li class="list__item">
                     <a class="list__link" href="#news-section">News</a>
                 </li>
@@ -53,12 +58,12 @@ favicon in allen möglichen formaten
         </nav>
         <form role="search" class="form form--search">
             <input class="text-input text-input--search" id="search" type="search" name="q" placeholder="looky, looky - findy, findy!" list="eastereggs" aria-label="Search through site content" size="50" />
-            <datalist class="form-options--search" id="eastereggs">
-                <option class="form-option--search" value="duck" />
-                <option class="form-option--search" value="1&#8364; in die Kasse" />
-                <option class="form-option--search" value="Aberdeen bei Sonne" />
-                <option class="form-option--search" value="Pato" />
-                <option class="form-option--search" value="SPAM" />
+            <datalist class="form-options form-options--search" id="eastereggs">
+                <option class="form-option form-option--search" value="duck" />
+                <option class="form-option form-option--search" value="1&#8364; in die Kasse" />
+                <option class="form-option form-option--search" value="Aberdeen bei Sonne" />
+                <option class="form-option form-option--search" value="Pato" />
+                <option class="form-option form-option--search" value="SPAM" />
             </datalist>
             <input class="button button--submit" type="submit" value="Search" />
         </form>
@@ -68,7 +73,7 @@ favicon in allen möglichen formaten
             <h2 class="heading-teaser">Images are always great!</h2>
             <figure class="image image--teaser">
                 <img class="image__visual image__visual--teaser" src="http://via.placeholder.com/650x350" alt="Grey image signifying the futility of life." />
-                <figcaption class="copy copy--teaser-image-caption">
+                <figcaption class="image__caption image__caption--teaser">
                     Every image needs flavour text.
                 </figcaption>
             </figure>
@@ -76,7 +81,7 @@ favicon in allen möglichen formaten
         <hr class="content-break" />
         <section class="news" id="news">
             <h2 class="heading-2">News</h2>
-            <article class="article--news">
+            <article class="article article--news">
                 <h3 class="heading-3">
                     News Number 1
                 </h3>
@@ -88,31 +93,33 @@ favicon in allen möglichen formaten
                 </p>
                 <figure class="image image--news">
                     <img class="image__visual image__visual--news" src="http://via.placeholder.com/350x150" alt="" />
-                    <figcaption class="copy copy--image-caption">
+                    <figcaption class="image__caption image__caption--news">
                         Aberdeen on a sunny day
                     </figcaption>
                 </figure>
             </article>
-            <article class="article--news">
+            <article class="article article--news">
                 <h3 class="heading-3">
                     News Number 2
                 </h3>
                 <p class="copy copy--date">Published on <time class="date" datetime="1913-12-20T19:00">December 20 1913</time></p>
                 <p class="copy copy--news">
                     This was slightly less important and happened just now.
-                    <blockquote class="blockquote" cite="https://github.com/MartinHelmut">Ich fand das eigentlich (1&#8364; in die Kasse) richtig bl&ouml;d! --Martin</blockquote> 
+                </p>
+                <blockquote class="blockquote" cite="https://github.com/MartinHelmut">Ich fand das eigentlich (1&#8364; in die Kasse) richtig bl&ouml;d! --Martin</blockquote> 
+                <p class="copy copy--news">
                     This was slightly less important and happened just now. This was slightly less important and happened just now. This was slightly less important and happened just now.
                     <br class="line-break" />
                     <i class="information">More information can be found via the Google search engine located <a class="link" href="https://www.google.de" target="_blank">here</a>.</i>
                 </p>
                 <figure class="image image--news">
                     <img class="image__visual image__visual--news" src="http://via.placeholder.com/350x150" alt="" />
-                    <figcaption class="copy copy--image-caption">
+                    <figcaption class="image__caption image__caption--news">
                         Hamburg on a rainy day.
                     </figcaption>
                 </figure>
             </article>
-            <article class="article--news">
+            <article class="article article--news">
                 <h3 class="heading-3">
                     News Number 3
                 </h3>
@@ -124,7 +131,7 @@ favicon in allen möglichen formaten
                 </p>
                 <figure class="image image--news">
                     <img class="image__visual image__visual--news" src="http://via.placeholder.com/350x150" alt="" />
-                    <figcaption class="copy copy--image-caption">
+                    <figcaption class="image__caption image__caption--news">
                         Beautiful view from the french atlantic coast (on a foggy day).
                     </figcaption>
                 </figure>
@@ -133,7 +140,7 @@ favicon in allen möglichen formaten
         <hr class="content-break" />
         <section class="contact" id="contact">
             <form class="form form--contact" action="#" method="post" autocomplete aria-autocomplete="on">
-                <legend class="copy copy--legend">
+                <legend class="legend">
                     <strong class="emphasize">
                         Contact Form
                     </strong>
@@ -142,54 +149,54 @@ favicon in allen möglichen formaten
                     Fields marked with <sup class="superscript">*</sup> are required fields.
                 </p>
                 <fieldset class="fieldset">
-                    <legend class="copy copy--legend">
+                    <legend class="legend">
                         What can you offer the mighty Pato?
                     </legend>
                     <select class="select" name="reason">
-                        <optgroup class="form-options--select" label="Please select your strongest quality.">
-                            <option class="form-option--select" value="saving the bees">
+                        <optgroup class="form-options form-options--select" label="Please select your strongest quality.">
+                            <option class="form-option form-option--select" value="saving the bees">
                                 I'm mentally helping to save the bees!
                             </option>
-                            <option class="form-option--select" value="mum">
+                            <option class="form-option form-option--select" value="mum">
                                 My mum said I'm special.
                             </option>
-                            <option class="form-option--select" value="duck dive roll">
+                            <option class="form-option form-option--select" value="duck dive roll">
                                 I'm a 'duck, dive and roll' pro. Just sayin'.
                             </option>
                         </optgroup>
                     </select>
                 </fieldset>
                 <fieldset class="fieldset">
-                    <legend class="copy copy--legend">
+                    <legend class="legend">
                         <sup class="superscript">*</sup>Which of these animals do you identify as most?
                     </legend>
-                    <div class="radios-wrapper">
-                        <label class="copy copy--label" for="goose">Goose</label>
+                    <div class="radios-group">
+                        <label class="label" for="goose">Goose</label>
                         <input class="radio" id="goose" type="radio" name="animal" value="Goose" required aria-required="true" />
-                        <label class="copy copy--label" for="Cat">Cat</label>
+                        <label class="label" for="Cat">Cat</label>
                         <input class="radio" id="Cat" type="radio" name="animal" value="Cat" />
-                        <label class="copy copy--label" for="Duck">Duck</label>
+                        <label class="label" for="Duck">Duck</label>
                         <input class="radio" id="Duck" type="radio" name="animal" value="Duck" />
                     </div>
                 </fieldset>
                 <fieldset class="fieldset">
-                    <legend class="copy copy--legend">
+                    <legend class="legend">
                         Personal Data
                     </legend>   
                     <fieldset class="fieldset fieldset--inner">
-                        <label class="copy copy--label" for="name">
+                        <label class="label" for="name">
                             <sup class="superscript">*</sup>Full Name:
                         </label>
                         <input class="text-input" id="name" type="text" placeholder="Max Mustermann" required aria-required="true" name="name" autocomplete="name" aria-autocomplete="both" />
                     </fieldset>
                     <fieldset class="fieldset fieldset--inner">
-                        <label class="copy copy--label" for="email">
+                        <label class="label" for="email">
                             <sup class="superscript">*</sup>E-Mail:
                         </label>
                         <input class="text-input" id="email" type="text" placeholder="example@mail.foo" required aria-required="true" name="email" autocomplete="email" aria-autocomplete="both" />
                     </fieldset>
                     <fieldset class="fieldset fieldset--inner">
-                        <label class="copy copy--label" for="comments" spellcheck="true">
+                        <label class="label" for="comments" spellcheck="true">
                             Comments:
                         </label>
                         <textarea class="text-input text-input--area" id="comments" type="text" aria-required="false" name="comments"></textarea>
@@ -197,7 +204,7 @@ favicon in allen möglichen formaten
                 </fieldset>
                 <fieldset class="fieldset">
                     <input class="checkbox" id="newsletter" type="checkbox" name="newsletter" />
-                    <label class="copy copy--newsletter-label" for="newsletter">Check this box if you would like our Newsletter in your SPAM folder.</label>
+                    <label class="label label--newsletter" for="newsletter">Check this box if you would like our Newsletter in your SPAM folder.</label>
                 </fieldset>
                 <input class="button button--submit" type="submit" id="submit" name="Submit" accesskey="enter" />
             </form>
@@ -228,7 +235,7 @@ favicon in allen möglichen formaten
                     <br class="line-break" />
                     Read more at <a class="link" href="https://www.theguardian.com/books/2018/may/15/anne-franks-dirty-jokes-found-diary-pages-covered-brown-paper">www.theguardian.com</a>
                 </p>
-                <div class="button-wrapper">
+                <div class="button-group">
                     <input class="button button--submit" type="submit" accesskey="v" name="interesting" value="(v)ery interesting!" />
                     <input class="button button--submit" type="submit" accesskey="w" name="boring" value="(w)ell..." />
                 </div>

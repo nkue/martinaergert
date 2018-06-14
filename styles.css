@@ -11,10 +11,10 @@
     /* Spacing variables */
     --padding: 10px;
     --margin: 10px;
-    --margin__last-element: calc(var(--margin) + var(--height_navigation));
+    --margin__last-element: calc(var(--margin) + var(--height__navigation));
 
     /* Size variables */
-    --height_navigation: 3em;
+    --height__navigation: 3em;
 }
 
 body { /* Basic */
@@ -51,7 +51,7 @@ body { /* Basic */
     position: fixed;
     top: 93%;
     left: 0;
-    height: var(--height_navigation);
+    height: var(--height__navigation);
     width: 100%;
     max-width: 100vw;
     margin: 0;
@@ -195,6 +195,10 @@ body { /* Basic */
     order: 2;
 }
 
+    .form--about > .copy {
+        text-align: center;
+    }
+
     .copy--date {
         text-align: end;
         width: 100%;
@@ -204,6 +208,7 @@ body { /* Basic */
     }
 
     .copy--news {
+        column-count: 2;
     }
 
     .copy--news::first-letter {
@@ -268,7 +273,9 @@ body { /* Basic */
         display: inline-block;
     }
 
-    .label--newsletter {}
+    .label--newsletter {
+        vertical-align: text-top;
+    }
 
 /* ------------------- */
 

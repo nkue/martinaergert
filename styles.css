@@ -108,6 +108,10 @@ body { /* Basic */
 
 .news {}
 
+.news--sidebar {
+    display: none;
+}
+
 .article,
 .contact,
 .about { /* Basic */ 
@@ -202,10 +206,6 @@ body { /* Basic */
     order: 2;
 }
 
-    .form--about > .copy {
-        text-align: center;
-    }
-
     .copy--date {
         text-align: end;
         width: 100%;
@@ -214,9 +214,14 @@ body { /* Basic */
         order: -1;
     }
 
-    .copy--news {
+    .copy {
         line-height: var(--font);
-        max-width: 60ch;
+        max-width: 40ch;
+    }
+
+    .copy--about {
+        text-align: center;
+        max-width: unset;
     }
 
     .copy--news::first-letter {
@@ -445,3 +450,80 @@ body { /* Basic */
 
         .image__visual--news {
         }
+
+@media (min-width: 480px) {
+
+    .first-level-section--subpage {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    .article,
+    .contact,
+    .about { /* Basic */
+        display: flex;
+        flex-direction: column;
+        margin-bottom: var(--space);
+        padding: var(--space);
+        border: 1px solid var(--color__primary--dark);
+        border-radius: 5px;
+        box-shadow: 2px 2px var(--color__primary--dark);
+        background-color: var(--color__secondary--light);
+    }
+
+    .copy--date {
+        text-align: center;
+    }
+
+    .copy--intro {
+        order: 1;
+    }
+
+    .copy {
+        align-self: center;
+        text-align: center;
+    }
+
+    .news {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .news--main {
+        display: flex;
+        flex-direction: column;
+        min-width: 60%;
+        margin-left: var(--space);
+        margin-right: var(--space);
+        border-right: 1px solid var(--color__primary--dark);
+    }
+
+    .news--sidebar {
+        display: flex;
+        flex-direction: column;
+        max-width: 30%;
+    }
+
+    .article--news {
+        max-width: 30%;
+    }
+
+    .article--sidebar {
+        max-width: 100%;
+    }
+
+    .news > .heading-2 {
+        min-width: 100%;
+    }
+
+    .about {
+        max-width: 100%;
+    }
+
+    .contact {
+        max-width: 100%; 
+    }
+}

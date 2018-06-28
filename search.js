@@ -46,13 +46,23 @@
 (() => {
 
     class ReplaceAndShow {
-        constructor(parent, child, main) {
+        constructor({
+            parent,
+            child,
+            main
+        }) {
             this.parent = parent,
             this.child = child,
             this.main = main
         }
 
-        change(elementName, type, className, eventType, eventClass) {
+        change({
+            elementName,
+            type,
+            className,
+            eventType,
+            eventClass
+        }) {
             const parentElement = document.querySelector(this.parent);
             const oldChild = parentElement.querySelector(this.child);
             const newChild = document.createElement(elementName);
@@ -63,17 +73,27 @@
             parentElement.replaceChild(newChild, oldChild);
         }
 
-        create(className) {
+        create(eventClass) {
             const mainElement = document.querySelector(this.main);
             const searchForm = document.querySelector(this.parent);
             const searchBar = searchForm.cloneNode(true);
-            searchBar.classList.add(className);
+            searchBar.classList.add(eventClass);
 
             mainElement.appendChild(searchBar);
         }
     }
 
-    new ReplaceAndShow(".form--search", ".button", ".first-level-section--main-content").change("input", "button", "button3", "click", "searchbar");
+    new ReplaceAndShow({
+        parent: ".form--search",
+        child: ".button",
+        main: ".first-level-section--main-content"
+    }).change({
+        elementName: "input",
+        type: "button",
+        className: "button3",
+        eventType: "click",
+        eventClass: "searchbar"
+    });
 
     // function replaceSearchButton(formclass) {
     //     const searchForm = document.querySelector(formclass);

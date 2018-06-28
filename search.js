@@ -43,7 +43,7 @@
 //     };
 // }());
 
-(function onSearchClick() {
+(() => {
 
     class ReplaceAndShow {
         constructor(parent, child, main) {
@@ -52,34 +52,28 @@
             this.main = main
         }
 
-        change() {
+        change(elementName, type, className, eventType, eventClass) {
             const parentElement = document.querySelector(this.parent);
             const oldChild = parentElement.querySelector(this.child);
-            const newChild = document.createElement("input");
-            newChild.type = "button";
-            newChild.classList.add("button3");
-            newChild.addEventListener("click", this.show);
+            const newChild = document.createElement(elementName);
+            newChild.type = type;
+            newChild.classList.add(className);
+            newChild.addEventListener(eventType, () => { this.create(eventClass) });
 
             parentElement.replaceChild(newChild, oldChild);
         }
 
-        create() {
+        create(className) {
             const mainElement = document.querySelector(this.main);
             const searchForm = document.querySelector(this.parent);
             const searchBar = searchForm.cloneNode(true);
-            searchBar.classList.add("searchbar");
+            searchBar.classList.add(className);
 
             mainElement.appendChild(searchBar);
         }
-
-        show() {
-            const searchBar = document.querySelector(".searchbar");
-            searchBar.classList.add("visible");
-        }
     }
 
-    new ReplaceAndShow(".form--search", ".button", ".first-level-section--main-content").change();
-    new ReplaceAndShow(".form--search", ".button", ".first-level-section--main-content").create();
+    new ReplaceAndShow(".form--search", ".button", ".first-level-section--main-content").change("input", "button", "button3", "click", "searchbar");
 
     // function replaceSearchButton(formclass) {
     //     const searchForm = document.querySelector(formclass);
@@ -110,5 +104,5 @@
     //     const searchBar = document.querySelector(".searchbar");
     //     searchBar.classList.add("visible");
     // }
-}());
+})();
 

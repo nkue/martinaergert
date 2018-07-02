@@ -1,79 +1,102 @@
-(class ReplaceAndShowSearchBar {
-    constructor({
-        parent,
-        child,
-        main,
-        config = {
-            tagName,
-            childType,
-            childClass,
-            eventType,
-            eventClass
+(() => {
+
+    const config = {
+        tagName: "input",
+        childType: "button",
+        childClass: "button3",
+        eventType: "click",
+        eventClass: "searchbar"
+    }
+
+    class ReplaceAndShowSearchBar {
+        constructor({
+            parent,
+            child,
+            main,
+            config = {
+                tagName,
+                childType,
+                childClass,
+                eventType,
+                eventClass
+            }
+        }) {
+            this.parent = parent;
+            this.child = child;
+            this.main = main;
+            this.config = config;
+            this.config.tagName = config.tagName;
+            this.config.childType = config.childType;
+            this.config.childClass = config.childClass;
+            this.config.eventType = config.eventType;
+            this.config.eventClass = config.eventClass;
+            this.state = {
+                visible: false,
+                oldParent: "",
+                oldChild: "",
+                newChild: "",
+                clonedElement: ""
+            }
         }
-    }) {
-        this.parent = parent;
-        this.child = child;
-        this.main = main;
-        this.config = config;
-    }
 
-    state = {
-        visible: false
-    }
+        doStuff() {
+            this.findExistingElement();
+            this.constructNewElement();
+            this.addCustomEventListener();
+            this.replaceExistingElement();
+            this.cloneExistingElement();
+            this.appendNewElement();
+            this.showElement();
+        }
 
-    findExistingElement() {
+        findExistingElement() {
             const parentElement = document.querySelector(this.parent);
             const oldChild = parentElement.querySelector(this.child);
+            
+            this.state.oldParent = parentElement;
+            this.state.oldChild = oldChild;
+        }
 
-            return oldChild;
-    }
+        constructNewElement() {
+            const newElement = document.createElement(config.tagName);
+            newElement.type = config.childType;
+            newElement.classList.add(config.childClass);
 
-    constructNewElement() {
-        const newElement = document.createElement(config.tagName);
-        newElement.type = config.childType;
-        newElement.classList.add(config.childClass);
+            return this.state.newChild = newElement;
+        }
 
-        return newElement;
-    }
+        addCustomEventListener() {
+            this.state.newChild.addEventListener(config.eventType, () => { showElement() });
+        }
 
-    addCustomEventListener() {
-        const element = document.querySelector(config.elementClass);
-        element.addEventListener(config.eventType, () => { showElement() });
-    }
+        showElement() {
+            if (!this.state.visible === true) {
+                this.state.visible = true;
+            }
+        }
 
-    showElement() {
-        if (!state.visible === true) {
-            state.visible = true;
+        replaceExistingElement() {
+            this.state.oldParent.replaceChild(this.state.newChild, this.state.oldChild);
+        }
+
+        cloneExistingElement() {
+            const searchForm = document.querySelector(this.parent);
+            const searchBar = searchForm.cloneNode(true);
+            searchBar.classList.add(config.eventClass);
+
+            this.state.clonedElement = searchBar;
+        }
+
+        appendNewElement() {
+            const mainElement = document.querySelector(this.main);
+            mainElement.appendChild(this.state.clonedElement);
         }
     }
 
-    replaceExistingElement() {
-        parentElement.replaceChild(newChild, oldChild);
-    }
-
-    cloneExistingElement() {
-        const searchForm = document.querySelector(this.parent);
-        const searchBar = searchForm.cloneNode(true);
-        searchBar.classList.add(config.eventClass);
-    }
-
-    appendNewElement() {
-        const mainElement = document.querySelector(this.main);
-        mainElement.appendChild(searchBar);
-    }
-});
-
-const config = {
-    tagName: "input",
-    childType: "button",
-    childClass: "button3",
-    eventType: "click",
-    eventClass: "searchbar"
-}
-
-new ReplaceAndShowSearchBar({
-    parent: ".form--search",
-    child: ".button",
-    main: ".first-level-section--main-content",
-    config: config
-}); 
+    new ReplaceAndShowSearchBar({
+        parent: ".form--search",
+        child: ".button",
+        main: ".first-level-section--main-content",
+        config: config
+    }).doStuff();
+})();

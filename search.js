@@ -45,30 +45,32 @@
 
 (() => {
 
+    const config = {
+        tagName: "input",
+        childType: "button",
+        childClass: "button3",
+        eventType: "click",
+        eventClass: "searchbar"
+    }
+
     class ReplaceAndShow {
         constructor({
             parent,
             child,
             main
         }) {
-            this.parent = parent,
-            this.child = child,
-            this.main = main
+            this.parent = parent;
+            this.child = child;
+            this.main = main;
+            this.create = this.create.bind(this);
         }
 
-        change({
-            elementName,
-            type,
-            className,
-            eventType,
-            eventClass
-        }) {
+        change() {
             const parentElement = document.querySelector(this.parent);
             const oldChild = parentElement.querySelector(this.child);
-            const newChild = document.createElement(elementName);
-            newChild.type = type;
-            newChild.classList.add(className);
-            newChild.addEventListener(eventType, () => { this.create(eventClass) });
+            console.log("config", this);
+            const newChild = constructElement(config);
+            console.log(newChild);
 
             parentElement.replaceChild(newChild, oldChild);
         }
@@ -87,14 +89,49 @@
         parent: ".form--search",
         child: ".button",
         main: ".first-level-section--main-content"
-    }).change({
-        elementName: "input",
-        type: "button",
-        className: "button3",
-        eventType: "click",
-        eventClass: "searchbar"
-    });
+    }).change();
 
+    function constructElement({
+        tagName,
+        childType,
+        childClass,
+        eventType,
+        eventClass
+    }) {
+        const newElement = document.createElement(tagName);
+        newElement.type = childType;
+        newElement.classList.add(childClass);
+        newElement.addEventListener(eventType, () => { this.create(eventClass) });
+        console.log("new", this);
+
+        return newElement;
+    }
+
+    function findElement({
+        parent = "",
+        child = "",
+        main = ""
+    }) {
+        const parentElement = document.querySelector(this.parent);
+        const oldChild = parentElement.querySelector(this.child);
+
+        return oldChild;
+    }
+
+    function replaceElement() {
+        parentElement.replaceChild(newChild, oldChild);
+    }
+
+    function cloneElement() {
+        const searchForm = document.querySelector(this.parent);
+        const searchBar = searchForm.cloneNode(true);
+        searchBar.classList.add(eventClass);
+    }
+
+    function addElement() {
+        const mainElement = document.querySelector(this.main);
+        mainElement.appendChild(searchBar);
+    }
     // function replaceSearchButton(formclass) {
     //     const searchForm = document.querySelector(formclass);
     //     const oldSearchButton = searchForm.querySelector(".button");

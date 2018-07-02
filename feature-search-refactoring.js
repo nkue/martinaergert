@@ -30,6 +30,7 @@
             this.config.childClass = config.childClass;
             this.config.eventType = config.eventType;
             this.config.eventClass = config.eventClass;
+            this.showElement = this.showElement.bind(this);
             this.state = {
                 visible: false,
                 oldParent: "",
@@ -46,7 +47,6 @@
             this.replaceExistingElement();
             this.cloneExistingElement();
             this.appendNewElement();
-            this.showElement();
         }
 
         findExistingElement() {
@@ -66,11 +66,12 @@
         }
 
         addCustomEventListener() {
-            this.state.newChild.addEventListener(config.eventType, () => { showElement() });
+            this.state.newChild.addEventListener(config.eventType, () => { this.showElement() });
         }
 
         showElement() {
             if (!this.state.visible === true) {
+                this.state.clonedElement.classList.add("visible");
                 this.state.visible = true;
             }
         }

@@ -101,36 +101,10 @@
         const newElement = document.createElement(tagName);
         newElement.type = childType;
         newElement.classList.add(childClass);
-        newElement.addEventListener(eventType, () => { this.create(eventClass) });
+        newElement.addEventListener(eventType, () => { create(eventClass) });
         console.log("new", this);
 
         return newElement;
-    }
-
-    function findElement({
-        parent = "",
-        child = "",
-        main = ""
-    }) {
-        const parentElement = document.querySelector(this.parent);
-        const oldChild = parentElement.querySelector(this.child);
-
-        return oldChild;
-    }
-
-    function replaceElement() {
-        parentElement.replaceChild(newChild, oldChild);
-    }
-
-    function cloneElement() {
-        const searchForm = document.querySelector(this.parent);
-        const searchBar = searchForm.cloneNode(true);
-        searchBar.classList.add(eventClass);
-    }
-
-    function addElement() {
-        const mainElement = document.querySelector(this.main);
-        mainElement.appendChild(searchBar);
     }
     // function replaceSearchButton(formclass) {
     //     const searchForm = document.querySelector(formclass);

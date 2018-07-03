@@ -30,7 +30,7 @@
             this.config.childClass = config.childClass;
             this.config.eventType = config.eventType;
             this.config.eventClass = config.eventClass;
-            this.showElement = this.showElement.bind(this);
+            this.toggleElement = this.toggleElement.bind(this);
             this.state = {
                 visible: false,
                 oldParent: "",
@@ -43,7 +43,7 @@
         doStuff() {
             this.findExistingElement();
             this.constructNewElement();
-            this.addCustomEventListener();
+            this.addToggleEventListener();
             this.replaceExistingElement();
             this.cloneExistingElement();
             this.appendNewElement();
@@ -65,15 +65,12 @@
             return this.state.newChild = newElement;
         }
 
-        addCustomEventListener() {
-            this.state.newChild.addEventListener(config.eventType, () => { this.showElement() });
+        addToggleEventListener() {
+            this.state.newChild.addEventListener(config.eventType, () => { this.toggleElement() });
         }
 
-        showElement() {
-            if (!this.state.visible === true) {
-                this.state.clonedElement.classList.add("visible");
-                this.state.visible = true;
-            }
+        toggleElement() {
+            this.state.clonedElement.classList.toggle("visible");
         }
 
         replaceExistingElement() {
@@ -81,11 +78,11 @@
         }
 
         cloneExistingElement() {
-            const searchForm = document.querySelector(this.parent);
-            const searchBar = searchForm.cloneNode(true);
-            searchBar.classList.add(config.eventClass);
+            const parentElementOriginal = document.querySelector(this.parent);
+            const childElementClone = parentElementOriginal.cloneNode(true);
+            childElementClone.classList.add(config.eventClass);
 
-            this.state.clonedElement = searchBar;
+            this.state.clonedElement = childElementClone;
         }
 
         appendNewElement() {

@@ -56,19 +56,23 @@ define styling of smallest atoms
                 </li>
             </ul>
         </nav>
-        <form role="search" class="form form--search" id="search-form">
-            <input class="text-input text-input--search" id="search" type="search" name="q" placeholder="looky, looky - findy, findy!" list="eastereggs" aria-label="Search through site content" size="50" />
-            <datalist class="form-options form-options--search" id="eastereggs">
-                <option class="form-option form-option--search" value="duck" />
-                <option class="form-option form-option--search" value="1&#8364; in die Kasse" />
-                <option class="form-option form-option--search" value="Aberdeen bei Sonne" />
-                <option class="form-option form-option--search" value="Pato" />
-                <option class="form-option form-option--search" value="SPAM" />
-            </datalist>
-            <div class="button button--submit" type="submit" value="Search" onclick="onSearchClick()"></div>
-        </form>
+        <div class="add-search-button"></div>
+        <div class="replace-search">
+            <form role="search" class="form form--search" id="search-form">
+                <input class="text-input text-input--search" id="search" type="search" name="q" placeholder="looky, looky - findy, findy!" list="eastereggs" aria-label="Search through site content" size="50" />
+                <datalist class="form-options form-options--search" id="eastereggs">
+                    <option class="form-option form-option--search" value="duck" />
+                    <option class="form-option form-option--search" value="1&#8364; in die Kasse" />
+                    <option class="form-option form-option--search" value="Aberdeen bei Sonne" />
+                    <option class="form-option form-option--search" value="Pato" />
+                    <option class="form-option form-option--search" value="SPAM" />
+                </datalist>
+                <div class="button button--submit" type="submit" value="Search" onclick="onSearchClick()"></div>
+            </form>
+        </div>
     </header>
     <main class="first-level-section first-level-section--main-content">
+        <div class="search-feature"></div>
         <section class="teaser">
             <h2 class="heading-teaser">Images are always great!</h2>
             <figure class="image image--teaser">
@@ -255,6 +259,6 @@ define styling of smallest atoms
             Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum. Loads of lorem ipsum.
         </small>
     </footer>
-    <script src="search.js"></script>
+    <script src="search-feature.js"></script>
 </body>
 </html>

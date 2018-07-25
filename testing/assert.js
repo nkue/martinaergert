@@ -46,10 +46,11 @@ window.asserts = (function () {
             if ( Array.isArray( value1 ) && Array.isArray( value2 ) ) {
                 value1.forEach(( name, index ) => {
                     if ( name !== value2[index] ) {
-                        if ( Array.isArray( name ) && Array.isArray( value2[index] ) ) {
-                            this.isEqualArray( name, value2[index] );
-                        } else {
+                        try {
+                            Array.isArray( name ) !== Array.isArray( value2[index] );
                             throw new Error( `    ${name}: ${value1} is not strictly equal to ${value2}` );
+                        } catch ( error ) {
+                            this.isEqualArray( name, value2[index] );
                         }
                     }
                     return this.isEqual( name, value2[index] );

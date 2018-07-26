@@ -72,10 +72,12 @@ window.asserts = (function () {
                     }
                     
                     if ( !Object.values(value2).includes(value) ) {
-                        if ( typeof value === "object") {
+                        try {
+                            typeof value !== "object";
+                            throw new Error( `    ${name}: ${value1} is not strictly equal to ${value2}` );
+                        } catch ( error ) {
                             return this.isEqual( value, value2[key] );
                         }
-                        throw new Error( `    ${name}: ${value1} is not strictly equal to ${value2}` );
                     }
 
                     return this.isEqual( value, value2[key] );

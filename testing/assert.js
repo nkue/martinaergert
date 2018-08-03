@@ -1,4 +1,6 @@
-window.asserts = (function () {
+const scope = window;
+
+scope.asserts = (function () {
     "use strict";
 
     function eitherBothOrNoNull( value1, value2 ) {

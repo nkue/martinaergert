@@ -52,7 +52,12 @@ scope.asserts = (function () {
                             Array.isArray( name ) !== Array.isArray( value2[index] );
                             throw new Error( `    ${name}: ${value1} is not strictly equal to ${value2}` );
                         } catch ( error ) {
-                            this.isEqualArray( name, value2[index] );
+                            if (!(this.isEqual( name, value2[index] ))) {
+                                throw new Error( `    ${name}: ${value1} is not strictly equal to ${value2}` );
+                            } else {
+                                this.isEqual( name, value2[index] )
+                            }
+                            
                         }
                     }
                     return this.isEqual( name, value2[index] );
@@ -89,17 +94,25 @@ scope.asserts = (function () {
         isNotEqual( value1, value2 ) {
             try {
                 this.isEqual( value1, value2 );
-                throw new Error( `    ${name}: ${value1} is strictly equal to ${value2}` );
+                throw new Error("weird");
             } catch( error ) {
-                // ignore incoming error
+                if ( error.message == "weird" ) {
+                    throw new Error( `    ${name}: ${value1} is strictly equal to ${value2}` );
+                } else {
+                    // ignore incoming error
+                }
             }
         },
         isNotEqualArray( value1, value2 ) {
             try {
-                this.isEqual( value1, value2 );
-                throw new Error( `    ${name}: ${value1} is strictly equal to ${value2}` );
+                this.isEqualArray( value1, value2 );
+                throw new Error("weird");
             } catch( error ) {
-                // ignore incoming error
+                if ( error.message == "weird" ) {
+                    throw new Error( `    ${name}: ${value1} is strictly equal to ${value2}` );
+                } else {
+                    // ignore incoming error
+                }
             }
         }
     };
